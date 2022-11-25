@@ -42,6 +42,7 @@ public class EnvChecker
 
     StringBuilder output = null;
 
+    int results = 0;
     long start = System.currentTimeMillis();
 
     for( String key : allEnvs.keySet() )
@@ -59,12 +60,14 @@ public class EnvChecker
         {
           output.append( "<br/><b>" + key + ":</b> " + value );
         }
+
+        results++;
       }
     }
 
     long end = System.currentTimeMillis();
 
-    return "Search for <b>" + terms + "</b> took <b>" + ( end - start ) + "ms</b><br/>" + ( output == null ? "Found 0 results." : "<br/>" + output.toString());
+    return "Search for <b>" + terms + "</b> took <b>" + ( end - start ) + "ms</b><br/>" + ( output == null ? "Found 0 results." : "Found <b>" + results + "</b><br/>" + output.toString());
   }
 
   @Path("/getenv")
