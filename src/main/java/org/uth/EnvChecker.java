@@ -11,7 +11,7 @@ public class EnvChecker
 {
   @Path("/getall")
   @GET
-  @Produces(MediaType.TEXT_HTML_TYPE)
+  @Produces("text/html")
   public String lookupAll() 
   {
     Map<String,String> allEnvs = System.getenv();
@@ -37,7 +37,7 @@ public class EnvChecker
 
   @Path("/getenv")
   @GET
-  @Produces(MediaType.TEXT_HTML_TYPE)
+  @Produces("text/html")
   public String lookupEnv(@QueryParam("target") String target )
   {
     String value = System.getenv( target );
