@@ -37,7 +37,7 @@ public class EnvChecker
 
   @Path("/getenv")
   @GET
-  @Produces(MediaType.TEXXT_HTML_TYPE)
+  @Produces(MediaType.TEXT_HTML_TYPE)
   public String lookupEnv(@QueryParam("target") String target )
   {
     String value = System.getenv( target );
